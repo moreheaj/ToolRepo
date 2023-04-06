@@ -121,8 +121,8 @@ Identify your source IP Address and your destination IP Address and port.
 
 For our demo we will use:
 
-     source address		192.168.70.10
-     destination address		192.168.70.170 UDP port 9669
+     source address     192.168.70.10
+     destination address     192.168.70.170 UDP port 9669
 
 We need connectivity from our source address 192.168.70.10 to an application listening on 192.168.70.150 UDP port 9669. 
 

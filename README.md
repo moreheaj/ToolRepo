@@ -68,7 +68,7 @@ We will run the sender app on the source, and the listener on the destination.
 
 If we draw it out, it might look something like this:
 
-![TCPDemo](./pictures/TCPDemo.PNG)
+![TCPDemo](./pictures/TCPDemo.PNG width="110%" height="110%")
 
 ## We will setup the destination, first.
 

@@ -80,7 +80,7 @@ If we draw it out, it might look something like this:
 
        TCPListener 9966
 
-![TCPListener](./pictures/picturetcplistener1.png)
+![TCPListener](./pictures/picturetcplistener1.png width="110%" height="110%")
 
 ## Next we need to set up the source.
 
@@ -90,15 +90,15 @@ If we draw it out, it might look something like this:
 
        TCPSend 192.168.70.150 9966
 
-![TCPSend](./pictures/picturetcpsend.png)
+![TCPSend](./pictures/picturetcpsend.png width="110%" height="110%")
 
 A successful response looks like this:
 
-![TCPSendSuccess](./pictures/picturetcpsendsuccess.png)
+![TCPSendSuccess](./pictures/picturetcpsendsuccess.png width="110%" height="110%")
 
 A failure looks like this:
 
-![TCPSendFailure](./pictures/picturetcpsendfailure.png)
+![TCPSendFailure](./pictures/picturetcpsendfailure.png width="110%" height="110%")
 
 In the event of a failure, check the following:
 
@@ -130,7 +130,7 @@ Again, we will run the sender app on the source, and the listener on the destina
 
 Here's our drawing:
 
-![UDPDemo](./pictures/UDPDemo.PNG)
+![UDPDemo](./pictures/UDPDemo.PNG width="110%" height="110%")
 
 ## We will setup the destination, first.
 
@@ -142,7 +142,7 @@ Here's our drawing:
 
      UDPListener 9669
 
-![TCPListener](./pictures/pictureudplisten.png)
+![TCPListener](./pictures/pictureudplisten.png width="110%" height="110%")
 
 ## Next we need to set up the source.
 
@@ -152,11 +152,11 @@ Here's our drawing:
 
      UDPSend 192.168.70.170 9669
 
-![UDPSend](./pictures/pictureudpsender1.png)
+![UDPSend](./pictures/pictureudpsender1.png width="110%" height="110%")
 
 A successful response is only indicated on the destination (listening) node (UDPListener) looks like this :
 
-![UDPListener](./pictures/pictureudplistener2.png)
+![UDPListener](./pictures/pictureudplistener2.png width="110%" height="110%")
 
 **A failure gives no acknowledgement on either sender node or reciever node.**
 

@@ -68,7 +68,7 @@ We will run the sender app on the source, and the listener on the destination.
 
 If we draw it out, it might look something like this:
 
-![TCPDemo](./pictures/TCPDemo.png)
+![TCPDemo](./pictures/TCPDemo.PNG)
 
 ## We will setup the destination, first.
 
@@ -130,7 +130,7 @@ Again, we will run the sender app on the source, and the listener on the destina
 
 Here's our drawing:
 
-![UDPDemo](./pictures/UDPDemo.png)
+![UDPDemo](./pictures/UDPDemo.PNG)
 
 ## We will setup the destination, first.
 

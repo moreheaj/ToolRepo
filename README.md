@@ -68,7 +68,7 @@ We will run the sender app on the source, and the listener on the destination.
 
 If we draw it out, it might look something like this:
 
-<img src="./pictures/TCPDemo.PNG" width="110%" height="110%">
+<img src="./pictures/TCPDemo.PNG" width="125%" height="125%">
 
 ## We will setup the destination, first.
 
@@ -80,7 +80,7 @@ If we draw it out, it might look something like this:
 
        TCPListener 9966
 
-<img src="./pictures/picturetcplistener1.png" width="110%" height="110%">
+<img src="./pictures/picturetcplistener1.png" width="125%" height="125%">
 
 ## Next we need to set up the source.
 
@@ -89,15 +89,15 @@ If we draw it out, it might look something like this:
 2. Peform a test using TCPSend:
 
        TCPSend 192.168.70.150 9966
-<img src="./pictures/picturetcpsend.png" width="110%" height="110%">
+<img src="./pictures/picturetcpsend.png" width="125%" height="125%">
 
 
 A successful response looks like this:
-<img src="./pictures/picturetcpsendsuccess.png" width="110%" height="110%">
+<img src="./pictures/picturetcpsendsuccess.png" width="125%" height="125%">
 
 A failure looks like this:
 
-<img src="./pictures/picturetcpsendfailure.png" width="110%" height="110%">
+<img src="./pictures/picturetcpsendfailure.png" width="125%" height="125%">
 
 
 In the event of a failure, check the following:
@@ -130,7 +130,7 @@ Again, we will run the sender app on the source, and the listener on the destina
 
 Here's our drawing:
 
-<img src="./pictures/UDPDemo.PNG" width="110%" height="110%">
+<img src="./pictures/UDPDemo.PNG" width="125%" height="125%">
 
 
 ## We will setup the destination, first.
@@ -143,7 +143,7 @@ Here's our drawing:
 
      UDPListener 9669
 
-<img src="./pictures/pictureudplisten.png" width="110%" height="110%">
+<img src="./pictures/pictureudplisten.png" width="125%" height="125%">
 
 ## Next we need to set up the source.
 
@@ -153,11 +153,11 @@ Here's our drawing:
 
      UDPSend 192.168.70.170 9669
 
-<img src="./pictures/pictureudpsender1.png" width="110%" height="110%">
+<img src="./pictures/pictureudpsender1.png" width="125%" height="125%">
 
 A successful response is only indicated on the destination (listening) node (UDPListener) looks like this :
 
-<img src="./pictures/pictureudplistener2.png" width="110%" height="110%">
+<img src="./pictures/pictureudplistener2.png" width="125%" height="125%">
 
 **A failure gives no acknowledgement on either sender node or reciever node.**
 

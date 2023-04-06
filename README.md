@@ -12,7 +12,9 @@ For TCP, I got tired of the long slow process of using telnet, the host and port
 
 I also could not find a simple way to test UDP easily between two Windows nodes.
 
-I wanted something simple, fast and scriptable.  It did not have to be perfect, but simple is good.
+I also wanted limited scope.  There are open source tools that are highly configurable in the wider scope.  Those are usually are received with frowns, if not out explicitly forbidden in some policies.
+
+I wanted something simple, fast deployment and scriptable.  It did not have to be perfect, but simple is good.
 
 With that in mind, I worked to create four command line console applications:
 
@@ -38,14 +40,16 @@ to go through the possible long and complex set up of web, application or databa
 
 1. Check your organization's policy for use of open source applications and seek approval, if necessary.   The code is presented, to allow detail and function review.
 
-2. For simplicity, copy the contents of the following folders into a single folder, **ToolRepo**:
+2. Each console app is a separate project.  Open the project and compile each one.
+
+3. For simplicity, copy the contents of the following folders into a single folder, **ToolRepo**:
 
        TCPListener\bin\release\net7.0
        TCPSend\bin\release\net7.0
        UDPListener\bin\release\net7.0
        UDPSend\bin\release\net7.0
 
-3. For each source and destination (Both TCP and UDP), copy the **ToolRepo** folder to the C:\ drive.
+4. For each source and destination (Both TCP and UDP), copy the **ToolRepo** folder to the C:\ drive.
 
 ## Testing with TCPListener and TCPSend
 
@@ -58,7 +62,13 @@ For our demo we will use:
       source address		192.168.70.10
       destination address	192.168.70.150 TCP port 9966
 
-We need connectivity from our source address 192.168.70.10 to a database listening on 192.168.70.150 port 9966. 
+We need connectivity from our source address 192.168.70.10 to an (imaginary) database listening on 192.168.70.150 port 9966. 
+
+We will run the sender app on the source, and the listener on the destination.
+
+If we draw it out, it might look something like this:
+
+![TCPDemo](./pictures/TCPDemo.png)
 
 ## We will setup the destination, first.
 
@@ -70,7 +80,7 @@ We need connectivity from our source address 192.168.70.10 to a database listeni
 
        TCPListener 9966
 
-![alt text](.\pictures\picturetcplistener1.png)
+![TCPListener](./pictures/picturetcplistener1.png)
 
 ## Next we need to set up the source.
 
@@ -80,15 +90,15 @@ We need connectivity from our source address 192.168.70.10 to a database listeni
 
        TCPSend 192.168.70.150 9966
 
-![alt text](.\pictures\picturetcpsend.png)
+![TCPSend](./pictures/picturetcpsend.png)
 
 A successful response looks like this:
 
-![alt text](.\pictures\picturetcpsendsuccess.png)
+![TCPSendSuccess](./pictures/picturetcpsendsuccess.png)
 
 A failure looks like this:
 
-![alt text](.\pictures\picturetcpsendfailure.png)
+![TCPSendFailure](./pictures/picturetcpsendfailure.png)
 
 In the event of a failure, check the following:
 
@@ -116,6 +126,12 @@ For our demo we will use:
 
 We need connectivity from our source address 192.168.70.10 to an application listening on 192.168.70.150 UDP port 9669. 
 
+Again, we will run the sender app on the source, and the listener on the destination.
+
+Here's our drawing:
+
+![UDPDemo](./pictures/UDPDemo.png)
+
 ## We will setup the destination, first.
 
 1. Log in to the destination.  
@@ -126,7 +142,7 @@ We need connectivity from our source address 192.168.70.10 to an application lis
 
      UDPListener 9669
 
-![alt text](.\pictures\pictureudplisten.png)
+![TCPListener](./pictures/pictureudplisten.png)
 
 ## Next we need to set up the source.
 
@@ -136,11 +152,11 @@ We need connectivity from our source address 192.168.70.10 to an application lis
 
      UDPSend 192.168.70.170 9669
 
-![alt text](.\pictures\pictureudpsender1.png)
+![UDPSend](./pictures/pictureudpsender1.png)
 
 A successful response is only indicated on the destination (listening) node (UDPListener) looks like this :
 
-![alt text](.\pictures\pictureudplistener2.png)
+![UDPListener](./pictures/pictureudplistener2.png)
 
 **A failure gives no acknowledgement on either sender node or reciever node.**
 
@@ -159,4 +175,39 @@ In the event of a failure, check the following:
 After confirming all of those things, if you are still experiencing failure, engage network level support in your routers and firewalls.
 The network SMEs can monitor and trace traffic through your infrastructure.
 
-## Cheers...  and good luck in your testing and troubleshooting!
+Tested using Windows 10 and Debian Bullseye.
+
+The procedures are similar for Linux.
+
+Copy the contents of these folders to a common folder on your Linux hard drive. /ToolRepo
+
+      TCPSend/bin/Debug/net7.0/linux-x64
+      TCPListener/bin/Debug/net7.0/linux-x64
+      UDPSend/bin/Debug/net7.0/linux-x64
+      UDPListener/bin/Debug/net7.0/linux-x64
+
+Then
+
+      sudo chmod +x /ToolRepo/TCPSend
+      sudo chmod +x /ToolRepo/TCPListener
+      sudo chmod +x /ToolRepo/UDPSend
+      sudo chmod +x /ToolRepo/UDPListener
+
+Then from a console, cd into the ToolRepo Folder.
+
+
+
+**In Linux, you must use sudo in front of each Listener if you use a listener port below 1025.**
+(This is due to the secure design of the operating system.)
+
+For Linux, place a "./" in front of each command, like these examples:
+
+     ./TCPSend 10.8.0.35 88
+     sudo ./TCPListener 188
+     ./UDPSend 70.35.40.176 199
+     sudo ./UDPListener 47
+
+
+Follow the previous (Windows) steps above to implement and understand each Listener and Sender pair.
+
+## Cheers...  and good luck in your tinkering, your testing and your troubleshooting!

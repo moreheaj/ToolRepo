@@ -103,7 +103,7 @@ A failure looks like this:
 In the event of a failure, check the following:
 
      The destination node is online and functioning.
-     Both Windows Firewalls allow the TCP connection.
+     Both Operating System Firewalls allow the TCP connection.
      The source node is online and functioning.
      TCPListener has been started and is functioning on the destination.
      The correct port was used with TCPListener. 
@@ -165,7 +165,7 @@ A successful response is only indicated on the destination (listening) node (UDP
 In the event of a failure, check the following:
 
      The destination node is online and functioning.
-     Both Windows Firewalls allow the UDP connection.
+     Both Operating System Firewalls allow the UDP connection.
      The source node is online and functioning.
      UDPListener has been started and is functioning on the destination.
      The correct port was used with UDPListener. 
